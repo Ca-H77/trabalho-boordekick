@@ -1,18 +1,178 @@
-.logo-img { height: 40px; width: auto;}
+/* ===== VARIÁVEIS (identidade visual BorderKick) ===== */
 :root {
   --cor-primaria: #0F172A;    /* Deep Slate Navy */
   --cor-secundaria: #16A34A;  /* Pitch Green */
   --cor-destaque: #0284C7;    /* Border Cyan */
   --cor-fundo: #F8FAFC;       /* Light Slate Neutral */
   --cor-texto: #0F172A;
+  --cor-hero: #293a4b;        /* cor do fundo da imagem da logo (ajuste com o conta-gotas) */
 
   --pendente: #f2c94c;
   --analise: #0284C7;
   --aprovado: #16A34A;
   --recusado: #eb5757;
 
+  --raio: 8px;
   --fonte-titulo: Arial, Helvetica, sans-serif;
   --fonte-corpo: Calibri, 'Open Sans', sans-serif;
 }
-.logo-texto { font-family: var(--fonte-titulo); font-weight: bold; text-transform: uppercase; color: var(--cor-primaria); }
+
+/* ===== RESET E BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--fonte-corpo);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: bold;
+}
+
+a { color: var(--cor-destaque); }
+
+/* ===== HERO (index.html) ===== */
+.hero {
+  background: var(--cor-hero);
+  text-align: center;
+  padding: 0 20px 50px;
+}
+
+.hero-logo {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  height: 220px;
+  object-fit: cover;   /* corta as sobras laranja das laterais */
+}
+
+.hero-slogan {
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
+  margin: 10px 0 24px;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== CABEÇALHO (demais páginas) ===== */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--cor-primaria);
+}
+
+.cabecalho nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.cabecalho nav a:hover { color: var(--cor-secundaria); }
+
+.logo-img { height: 40px; width: auto; }
+
+.logo-texto {
+  font-family: var(--fonte-titulo);
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
 .logo-texto span { color: var(--cor-secundaria); }
+
+/* ===== COMPONENTES ===== */
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--raio);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--cor-secundaria);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--raio);
+  font-family: var(--fonte-titulo);
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { opacity: .9; }
+
+.btn-secundario { background: var(--cor-destaque); }
+.btn-aprovar { background: var(--aprovado); }
+.btn-recusar { background: var(--recusado); }
+
+label { font-weight: bold; }
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--raio);
+  font-family: var(--fonte-corpo);
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--cor-destaque);
+  border-color: transparent;
+}
+
+/* ===== TABELA (validacao.html) ===== */
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th { background: var(--cor-primaria); color: #fff; text-align: left; }
+th, td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
+
+/* ===== STATUS DO VISTO ===== */
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+.status-pendente { background: var(--pendente); color: var(--cor-texto); }
+.status-analise  { background: var(--analise); }
+.status-aprovado { background: var(--aprovado); }
+.status-recusado { background: var(--recusado); }
+
+/* ===== AVISO DE BLOQUEIO (regra de compliance) ===== */
+.aviso-erro {
+  background: var(--recusado);
+  color: #fff;
+  padding: 12px;
+  border-radius: var(--raio);
+  margin: 12px 0;
+  display: none; /* o JS mostra quando bloquear */
+}
+
+/* ===== VOUCHER ===== */
+.voucher {
+  background: #fff;
+  border-left: 8px solid var(--cor-secundaria);
+  border-radius: var(--raio);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+@media print {
+  .cabecalho, .btn { display: none; }
+}
