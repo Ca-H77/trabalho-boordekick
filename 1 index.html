@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | BorderKick</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="index.html" class="logo-texto">Border<span>Kick</span></a>
+        <nav>
+            <a href="login.html">Entrar</a>
+            <a href="cadastro.html">Cadastrar</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card card-estreito">
+            <h2>Entrar</h2>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com">
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Sua senha">
+
+            <label for="perfil">Perfil</label>
+            <select id="perfil">
+                <option value="cliente">Cliente (Torcedor VIP)</option>
+                <option value="atendente">Atendente de Validação</option>
+            </select>
+
+            <div class="aviso-erro" id="avisoLogin">E-mail ou senha incorretos.</div>
+
+            <button class="btn" id="btnEntrar">Entrar</button>
+
+            <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </div>
+    </main>
+
+</body>
+</html>
