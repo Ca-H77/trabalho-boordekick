@@ -1,1 +1,18 @@
 .logo-img { height: 40px; width: auto;}
+:root {
+  --cor-primaria: #0F172A;    /* Deep Slate Navy */
+  --cor-secundaria: #16A34A;  /* Pitch Green */
+  --cor-destaque: #0284C7;    /* Border Cyan */
+  --cor-fundo: #F8FAFC;       /* Light Slate Neutral */
+  --cor-texto: #0F172A;
+
+  --pendente: #f2c94c;
+  --analise: #0284C7;
+  --aprovado: #16A34A;
+  --recusado: #eb5757;
+
+  --fonte-titulo: Arial, Helvetica, sans-serif;
+  --fonte-corpo: Calibri, 'Open Sans', sans-serif;
+}
+.logo-texto { font-family: var(--fonte-titulo); font-weight: bold; text-transform: uppercase; color: var(--cor-primaria); }
+.logo-texto span { color: var(--cor-secundaria); }
